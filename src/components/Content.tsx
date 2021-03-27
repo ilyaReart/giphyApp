@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-
+import React  from "react";
+import "../index.css"
 
 interface Props {
   isImages: any;
@@ -8,10 +8,10 @@ interface Props {
 const Content = ({ isImages }: Props) => {
  
   return (
-    <div>
+    <div className="imageContainer">
       {isImages && (
-        <div style={{ width: "150px", height: "150px" }}>
-          <img src={isImages?.data?.image_original_url} />
+        <div>
+          <img src={isImages?.data?.image_original_url} className="image"/>
         </div>
       )}
     </div>

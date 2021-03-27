@@ -30,8 +30,10 @@ export const Main: React.FC = () => {
     const value = element.value;
     setTagName(value);
   };
+
   const onClickClean = (e: any) => {
     e.preventDefault();
+    
     setImages("");
     setTagName("");
   };
