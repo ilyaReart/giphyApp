@@ -14,7 +14,7 @@ export const Main: React.FC = () => {
     );
 
     response.then((res: any) => {
-      if (res?.data?.length=== 0) {
+      if (res?.data?.length === 0) {
         alert("По тегу ничего не найдено");
       } else {
         setImages(res);
@@ -22,6 +22,11 @@ export const Main: React.FC = () => {
     });
   };
 
+  const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
+    const element = e.target as HTMLInputElement;
+    const value = element.value;
+    setTagName(value);
+  };
   const onClickClean = (e: any) => {
     e.preventDefault();
     setImages("");
@@ -35,7 +40,7 @@ export const Main: React.FC = () => {
           className="inputStyle"
           placeholder="введите тег"
           value={tagName}
-          onChange={(e: any) => setTagName(e.target.value)}
+          onChange={handleChange}
         />
         <button className="loadButton" onClick={onClickDownload}>
           Загрузить
