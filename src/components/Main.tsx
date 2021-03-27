@@ -3,7 +3,7 @@ import Content from "./Content";
 import { getResponse } from "../API/index";
 import { API_KEY } from "../API/API_KEY";
 
-export const AppContainer: React.FC = () => {
+export const Main: React.FC = () => {
   const [isImages, setImages] = useState<any>("");
   const [tagName, setTagName] = useState<string>("");
 
@@ -12,12 +12,9 @@ export const AppContainer: React.FC = () => {
     const response = getResponse(
       `https://api.giphy.com/v1/gifs/random?api_key=${API_KEY}&tag=${tagName}`
     );
-    console.log("pizda", response);
 
     response.then((res: any) => {
-      if ( !res.data ) {
-         return;
-      } else if (res?.data?.length=== 0) {
+      if (res?.data?.length=== 0) {
         alert("По тегу ничего не найдено");
       } else {
         setImages(res);
@@ -48,6 +45,11 @@ export const AppContainer: React.FC = () => {
         </button>
         <button className="groupButton">Группировать</button>
       </div>
+      <Content isImages={isImages} />
+      <Content isImages={isImages} />
+      <Content isImages={isImages} />
+      <Content isImages={isImages} />
+      <Content isImages={isImages} />
       <Content isImages={isImages} />
     </>
   );

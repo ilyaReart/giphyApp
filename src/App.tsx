@@ -1,11 +1,11 @@
 import React from "react";
-import { AppContainer } from "./components/AppContainer";
+import { Main } from "./components/Main";
 import "./index.css";
 
 const App: React.FC = () => {
   return (
     <>
-      <AppContainer />
+      <Main />
     </>
   );
 };
